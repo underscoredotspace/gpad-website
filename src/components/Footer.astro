@@ -1,0 +1,24 @@
+---
+
+---
+<footer>
+    <button id="toggle-dark">☀️</button>
+</footer>
+
+<script>
+    const button = document.querySelector("button#toggle-dark")
+
+    if (button) {
+        button.addEventListener("click", () =>  {
+            const darkEnabled = localStorage.getItem("theme") === "dark"
+
+            localStorage.setItem("theme",  darkEnabled ? "light" : 'dark')
+
+            if (!darkEnabled) {
+                document.documentElement.classList.add('dark')
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        })
+    }
+</script>
