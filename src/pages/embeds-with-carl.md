@@ -1,5 +1,5 @@
 ---
-layout: '../layouts/Layout.astro'
+layout: '../layouts/MarkdownLayout.astro'
 title: 'Embeds with Carl'
 ---
 This is my page, written in **Markdown.**
