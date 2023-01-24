@@ -1,11 +1,11 @@
 ---
 import type { MarkdownLayoutProps } from 'astro';
-import type {Props as LayoutProps} from './Layout.astro'
+import type { Props as LayoutProps } from './Layout.astro';
 import Layout from './Layout.astro';
 
-export type Props = MarkdownLayoutProps<LayoutProps>
+export type Props = MarkdownLayoutProps<LayoutProps>;
 ---
 
 <Layout title={Astro.props.frontmatter.title}>
-<slot />   
+	<slot />
 </Layout>
