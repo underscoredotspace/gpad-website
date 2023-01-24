@@ -7,9 +7,7 @@ title: 'Embeds with Carl'
 
 Go to <a href="https://carl.gg/dashboard/527260303386214418/embeds" target="_blank" rel="noreferrer">the embeds section on the Carl dashboard</a>.
 
-<p/>
-There's a couple of places where you can add links in the embed template already. In other text fields you can use <a href="https://www.markdownguide.org/tools/discord/" target="_blank" rel="noreferrer">MarkDown</a> to create links as well as other layouts/styles. 
-<p/>
+There's a couple of places where you can add links in the embed template already. In other text fields you can use <a href="https://www.markdownguide.org/tools/discord/" target="_blank" rel="noreferrer">MarkDown</a> to create links as well as other layouts/styles.
 
 ### Sample embed
 

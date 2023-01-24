@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+	body {
+		@apply mb-4;
+	}
+
 	code {
 		@apply dark:text-yellow-200 text-orange-700;
 	}
@@ -27,8 +31,8 @@
 	h2,
 	h3,
 	h4,
-	p {
-		@apply pt-2 pb-1;
+	p:not(:has(> img, > video)) {
+		@apply pt-2 pb-1 px-2;
 	}
 
 	a {
@@ -37,6 +41,10 @@
 
 	video,
 	img {
-		width: 100%;
+		@apply w-full;
+	}
+
+	hr {
+		@apply my-4;
 	}
 }
