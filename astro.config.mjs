@@ -4,6 +4,7 @@ import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
+	server: { port: 1234 },
 	integrations: [
 		tailwind({
 			config: {

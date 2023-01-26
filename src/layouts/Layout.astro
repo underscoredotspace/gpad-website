@@ -20,17 +20,6 @@ import '../styles/global.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<script>
-			const theme = localStorage.getItem('theme');
-
-			if (
-				theme === 'dark' ||
-				(!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
-			) {
-				document.documentElement.classList.add('dark');
-			} else {
-				document.documentElement.classList.remove('dark');
-			}
-
 			import * as Sentry from '@sentry/browser';
 			import { BrowserTracing } from '@sentry/tracing';
 
@@ -40,6 +29,7 @@ import '../styles/global.css';
 				tracesSampleRate: 1.0,
 				release: `gpad_website@${import.meta.env.APP_VERSION}`,
 				environment: import.meta.env.MODE,
+				enabled: !import.meta.env.DEV,
 			});
 		</script>
 	</head>
@@ -48,7 +38,6 @@ import '../styles/global.css';
 		<main class="min-h-screen">
 			<slot />
 		</main>
-		<hr />
 		<Footer />
 	</body>
 </html>
