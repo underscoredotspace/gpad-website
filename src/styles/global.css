@@ -3,25 +3,20 @@
 @tailwind utilities;
 
 @layer base {
-	body::before {
-		@apply inset-0;
-		background-image: url('/background.png');
-	}
-
 	code {
 		@apply dark:text-yellow-200 text-orange-700;
 	}
 
 	h1 {
-		@apply text-5xl font-bold;
+		@apply text-2xl font-bold;
 	}
 
 	h2 {
-		@apply text-3xl font-bold;
+		@apply text-xl font-bold;
 	}
 
 	h3 {
-		@apply text-xl font-bold;
+		@apply text-lg font-bold;
 	}
 
 	h4 {
