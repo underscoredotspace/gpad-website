@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-	body {
-		@apply mb-4;
+	body::before {
+		@apply inset-0;
+		background-image: url('/background.png');
 	}
 
 	code {
@@ -27,21 +28,30 @@
 		@apply text-lg font-bold;
 	}
 
-	h1,
-	h2,
-	h3,
-	h4,
+	main h1,
+	main h2,
+	main h3,
+	main h4 {
+		@apply mt-6 -mb-3 mx-4;
+	}
+
 	p:not(:has(> img, > video)) {
-		@apply pt-2 pb-1 px-2;
+		@apply mt-4 mx-4;
+	}
+
+	@supports not selector(:has(a, b)) {
+		p {
+			@apply mt-4 mx-4;
+		}
+	}
+
+	p video,
+	p img {
+		@apply w-full mt-4;
 	}
 
 	a {
 		@apply text-sky-600 underline;
-	}
-
-	video,
-	img {
-		@apply w-full;
 	}
 
 	hr {

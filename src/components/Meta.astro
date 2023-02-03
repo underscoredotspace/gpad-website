@@ -1,0 +1,36 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+	name="description"
+	content="An active and supportive PlayStation and Xbox Grand Theft Auto Online crew and gaming community"
+/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+<script>
+	import * as Sentry from '@sentry/browser';
+	import { BrowserTracing } from '@sentry/tracing';
+
+	Sentry.init({
+		dsn: 'https://1e9c450069244eb59eb05153268ead3e@o1138904.ingest.sentry.io/4504564768374784',
+		integrations: [new BrowserTracing()],
+		tracesSampleRate: 1.0,
+		release: `gpad_website@${import.meta.env.APP_VERSION}`,
+		environment: import.meta.env.MODE,
+		enabled: !import.meta.env.DEV,
+	});
+</script>

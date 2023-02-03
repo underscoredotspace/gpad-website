@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import preact from '@astrojs/preact';
+import image from '@astrojs/image';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,12 +12,25 @@ export default defineConfig({
 				applyBaseStyles: false,
 			},
 		}),
-		preact(),
+		preact({ compat: true }),
+		image(),
 	],
 
 	vite: {
 		define: {
 			'import.meta.env.APP_VERSION': JSON.stringify(process.env.npm_package_version),
+		},
+		build: {
+			rollupOptions: {
+				output: {
+					entryFileNames: 'entry.[hash].js',
+					chunkFileNames: 'chunks/chunk.[hash].js',
+					assetFileNames: 'assets/asset.[hash][extname]',
+				},
+			},
+		},
+		ssr: {
+			noExternal: ['@radix-ui/react-icons'],
 		},
 	},
 });
