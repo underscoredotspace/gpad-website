@@ -13,11 +13,11 @@ There's a couple of places where you can add links in the embed template already
 
 This example shows where you can use MarkDown to create links
 
-![screenshot of sample embed on Carl dashboard](/embeds-with-carl/EmbedSample.png)
+<img src="/embeds-with-carl/EmbedSample.png" loading="lazy" alt="screenshot of sample embed on Carl dashboard">
 
 Once you've got your embed like you want it, choose the channel you want to post it in and hit the [Post] button.
 
-![Screenshot of sample embed](/embeds-with-carl/embed.png)
+<img src="/embeds-with-carl/embed.png" loading="lazy" alt="Screenshot of sample embed">
 
 ### Editing an existing embed
 
