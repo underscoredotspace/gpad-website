@@ -23,10 +23,10 @@ Once you've got your embed like you want it, choose the channel you want to post
 
 Use the command `?embedsource <message-id>` to get the "source" of the embed. Carl will then post the source JSON. Copy the text (everything inclusive of the curly braces: `{` and `}`) from that message and past it into the Raw JSON box below the preview.
 
-<video controls src="/embeds-with-carl/embedsource.mov"></video>
+<video controls src="/embeds-with-carl/embedsource.mov" preload="metadata"></video>
 
 Once you've edited your embed in the Carl dashboard, click the [Copy to Clipboard] button.
 
 Use the command `?ecembed <message-id> <json>` to update your embed.
 
-<video controls src="/embeds-with-carl/ecembed.mov"></video>
+<video controls src="/embeds-with-carl/ecembed.mov" preload="metadata"></video>
