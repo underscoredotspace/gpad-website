@@ -15,8 +15,8 @@
     "@astrojs/preact": "^2.0.0",
     "@astrojs/tailwind": "^3.0.0",
     "@radix-ui/react-icons": "^1.1.1",
-    "@sentry/browser": "^7.33.0",
-    "@sentry/tracing": "^7.33.0",
+    "@sentry/browser": "latest",
+    "@sentry/tracing": "latest",
     "astro": "^2.0.1",
     "preact": "^10.11.3",
     "tailwindcss": "^3.2.4"
