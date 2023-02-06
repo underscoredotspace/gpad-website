@@ -7,7 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --host",
     "astro": "astro"
   },
   "dependencies": {
@@ -29,5 +29,8 @@
   "overrides": {
     "react": "npm:@preact/compat@latest",
     "react-dom": "npm:@preact/compat@latest"
+  },
+  "peerDependencies": {
+    "cssnano": "^5.1.12"
   }
 }
