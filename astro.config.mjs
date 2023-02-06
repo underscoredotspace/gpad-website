@@ -19,6 +19,7 @@ export default defineConfig({
 	vite: {
 		define: {
 			'import.meta.env.APP_VERSION': JSON.stringify(process.env.npm_package_version),
+			'import.meta.env.APP_ENV': JSON.stringify(process.env.NODE_ENV),
 		},
 		build: {
 			rollupOptions: {
@@ -28,7 +29,7 @@ export default defineConfig({
 			},
 		},
 		ssr: {
-			noExternal: ['@radix-ui/react-icons'],
+			noExternal: ['@radix-ui/react-icons', '@fortawesome/react-fontawesome'],
 		},
 	},
 });

@@ -29,33 +29,16 @@ const { title } = Astro.props;
 		</script>
 		<Meta title={title} />
 	</head>
-	<body class="mb-4 text-zinc-800 dark:text-zinc-300 antialiased bg-zinc-800">
+	<body class="text-zinc-800 dark:text-zinc-300 antialiased bg-zinc-800">
 		<div class="bg-[url('/background.png')] bg-fixed">
 			<Header title={title} />
-			{
-				/*<div class="flex flex-row space-x-1 bg-zinc-800 font-bold mb-1">
-						<div class="p-4 text-orange-300">Block</div>
-						<div class="p-4 text-lime-300">Block</div>
-						<div class="p-4 text-cyan-300">Block</div>
-						<div class="p-4 text-pink-300">Block</div>
-						</div>
-						
-						<div class="flex flex-row space-x-1 text-zinc-800 font-bold">
-							<div class="p-4 bg-orange-300">Block</div>
-							
-							<div class="p-4 bg-lime-300">Block</div>
-							
-							<div class="p-4 bg-cyan-300">Block</div>
-							<div class="p-4 bg-pink-300">Block</div>
-							</div>*/
-			}
 			<main class="min-h-screen flex flex-col items-center bg-zinc-300/60 dark:bg-zinc-800/60">
-				<div class="mt-16 max-w-screen-lg flex-1 bg-zinc-300/80 dark:bg-zinc-800/80">
+				<div class="mt-16 pb-8 max-w-screen-lg flex-1 bg-zinc-300/80 dark:bg-zinc-800/80">
 					<slot />
 				</div>
 			</main>
-		</div>
 
-		<Footer />
+			<Footer />
+		</div>
 	</body>
 </html>

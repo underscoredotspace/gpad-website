@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+	{text,bg}-orange-300/700
+	{text,bg}-lime-300/700
+	{text,bg}-cyan-300/700
+	{text,bg}-pink-300/700
+*/
+
 @layer base {
 	code {
 		@apply dark:text-orange-300 text-orange-700;
@@ -45,8 +52,8 @@
 		@apply w-full mt-4;
 	}
 
-	a {
-		@apply dark:text-cyan-300 text-cyan-700 underline;
+	a:not([x-bare]) {
+		@apply dark:text-cyan-300 text-cyan-700 hover:underline;
 	}
 
 	hr {
