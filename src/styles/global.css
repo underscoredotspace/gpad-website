@@ -4,7 +4,7 @@
 
 @layer base {
 	code {
-		@apply dark:text-yellow-200 text-orange-700;
+		@apply dark:text-orange-300 text-orange-700;
 	}
 
 	h1 {
@@ -46,7 +46,7 @@
 	}
 
 	a {
-		@apply text-sky-600 underline;
+		@apply dark:text-cyan-300 text-cyan-700 underline;
 	}
 
 	hr {
