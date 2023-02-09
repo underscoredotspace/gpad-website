@@ -41,6 +41,10 @@
 		@apply mt-4 mx-4;
 	}
 
+	body:has(#menu-open:checked) {
+		@apply overflow-y-hidden;
+	}
+
 	@supports not selector(:has(a, b)) {
 		p {
 			@apply mt-4 mx-4;

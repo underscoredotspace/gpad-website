@@ -1,0 +1,5 @@
+[context.staging.environment]
+  APP_ENV = "staging"
+
+[context.deploy-preview.environment]
+  APP_ENV = "development"
