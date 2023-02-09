@@ -6,6 +6,11 @@ export interface Props {
 	pages: MarkdownInstance<Record<string, any>>[];
 }
 
+console.log(
+	Astro.url.pathname,
+	Astro.props.pages.map(({ url }) => url)
+);
+
 const pages = [
 	{ active: Astro.url.pathname === '/', url: '/', title: 'Home' },
 	...Astro.props.pages
@@ -16,6 +21,7 @@ const pages = [
 			title: page.frontmatter.title,
 		})),
 ];
+console.log(pages);
 ---
 
 <style>
@@ -41,14 +47,23 @@ const pages = [
 
 <menu
 	id="menu"
-	class="inset-x-0 top-16 bottom-0 bg-zinc-800/90 p-4 absolute h-screen bg-opacity-50 z-40 duration-300 ease-in-out overflow-y-auto"
+	class="space-y-4 inset-x-0 top-16 bottom-0 bg-zinc-800/90 p-4 absolute h-screen bg-opacity-50 z-40 duration-300 ease-in-out overflow-y-auto"
 >
 	{
 		pages.map((page) => (
-			<li class="p-2 hover:bg-zinc-600 w-full" class:list={[page.active ? 'bg-zinc-700' : '']}>
-				<a x-bare href={page.url} class="block">
-					{page.title}
-				</a>
+			<li
+				class:list={[
+					'w-full border-transparent hover:border-cyan-300',
+					{ 'bg-zinc-700/70': page.active, border: !page.active },
+				]}
+			>
+				{page.active ? (
+					<div class="p-2 font-bold">{page.title}</div>
+				) : (
+					<a x-bare href={page.url} class="block p-2  hover:text-cyan-300">
+						{page.title}
+					</a>
+				)}
 			</li>
 		))
 	}

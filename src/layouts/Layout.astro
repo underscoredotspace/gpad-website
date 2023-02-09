@@ -35,7 +35,7 @@ const pages = await Astro.glob('../pages/*.md');
 			<Header title={title} pages={pages} />
 
 			<main class="min-h-screen flex flex-col items-center bg-zinc-300/60 dark:bg-zinc-800/60">
-				<div class="mt-16 pb-8 max-w-screen-lg flex-1 bg-zinc-300/80 dark:bg-zinc-800/80">
+				<div class="mt-16 pb-8 w-full max-w-screen-lg flex-1 bg-zinc-300/80 dark:bg-zinc-800/80">
 					<slot />
 				</div>
 			</main>

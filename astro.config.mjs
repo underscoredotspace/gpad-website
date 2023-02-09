@@ -2,9 +2,12 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import preact from '@astrojs/preact';
 import image from '@astrojs/image';
+import netlify from '@astrojs/netlify/edge-functions';
 
 // https://astro.build/config
 export default defineConfig({
+	output: 'server',
+	adapter: netlify(),
 	server: { port: 1234 },
 	integrations: [
 		tailwind({
@@ -29,7 +32,7 @@ export default defineConfig({
 			},
 		},
 		ssr: {
-			noExternal: ['@radix-ui/react-icons', '@fortawesome/react-fontawesome'],
+			noExternal: ['@radix-ui/react-icons', '@fortawesome/react-fontawesome', 'luxon'],
 		},
 	},
 });

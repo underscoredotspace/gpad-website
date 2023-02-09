@@ -1,0 +1,38 @@
+---
+import Card from '../components/Card.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<script>
+	import { DateTime, Duration } from 'luxon';
+
+	const crewStats = await fetch('/crew-stats.json')
+		.then((res) => res.json())
+		.catch((error) => {
+			console.error(`Something went wrong: ${error}`);
+		});
+
+	const ps = document.querySelector('dd[x-ps]');
+	const xb = document.querySelector('dd[x-xb]');
+	const lastUpdated = document.querySelector('span[x-last-updated]');
+
+	if (ps && xb && lastUpdated) {
+		console.log(crewStats);
+		ps.textContent = crewStats.ps;
+		xb.textContent = crewStats.xb;
+		lastUpdated.textContent = DateTime.fromJSDate(new Date(crewStats.lastUpdate)).toRelative();
+	}
+</script>
+
+<Layout title="Just a test">
+	<Card class="max-w-xl mx-auto">
+		<dl class="grid grid-cols-2">
+			<dt x-ps>PlayStation</dt>
+			<dd x-ps>...</dd>
+
+			<dt x-xb>Xbox</dt>
+			<dd x-xb>...</dd>
+		</dl>
+		<div>Last updated: <span x-last-updated>...</span></div>
+	</Card>
+</Layout>
