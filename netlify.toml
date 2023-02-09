@@ -1,5 +1,5 @@
-[context.branch-deploy.environment]
-  APP_ENV = "development"
+[context.staging.environment]
+  APP_ENV = "staging"
 
 [context.deploy-preview.environment]
   APP_ENV = "development"
