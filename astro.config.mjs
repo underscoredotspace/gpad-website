@@ -19,7 +19,7 @@ export default defineConfig({
 	vite: {
 		define: {
 			'import.meta.env.APP_VERSION': JSON.stringify(process.env.npm_package_version),
-			'import.meta.env.APP_ENV': JSON.stringify(process.env.NODE_ENV),
+			'import.meta.env.APP_ENV': JSON.stringify(process.env.APP_ENV ?? 'development'),
 		},
 		build: {
 			rollupOptions: {

@@ -1,0 +1,55 @@
+---
+import { HamburgerMenuIcon, Cross1Icon } from '@radix-ui/react-icons';
+import type { MarkdownInstance } from 'astro';
+
+export interface Props {
+	pages: MarkdownInstance<Record<string, any>>[];
+}
+
+const pages = [
+	{ active: Astro.url.pathname === '/', url: '/', title: 'Home' },
+	...Astro.props.pages
+		.filter(({ url }) => url && url.length > 0)
+		.map((page) => ({
+			active: Astro.url.pathname === page.url,
+			url: page.url,
+			title: page.frontmatter.title,
+		})),
+];
+---
+
+<style>
+	#menu-open:not(:checked) ~ menu {
+		@apply opacity-0 transform translate-x-full;
+	}
+
+	#menu-open:checked ~ label > #hamburger {
+		@apply hidden;
+	}
+
+	#menu-open:not(:checked) ~ label > #cross {
+		@apply hidden;
+	}
+</style>
+
+<input type="checkbox" name="menu-open" id="menu-open" class="sr-only" />
+
+<label for="menu-open">
+	<HamburgerMenuIcon id="hamburger" class="w-8 h-8" />
+	<Cross1Icon id="cross" class="w-8 h-8" />
+</label>
+
+<menu
+	id="menu"
+	class="inset-x-0 top-16 bottom-0 bg-zinc-800/90 p-4 absolute h-screen bg-opacity-50 z-40 duration-300 ease-in-out overflow-y-auto"
+>
+	{
+		pages.map((page) => (
+			<li class="p-2 hover:bg-zinc-600 w-full" class:list={[page.active ? 'bg-zinc-700' : '']}>
+				<a x-bare href={page.url} class="block">
+					{page.title}
+				</a>
+			</li>
+		))
+	}
+</menu>
