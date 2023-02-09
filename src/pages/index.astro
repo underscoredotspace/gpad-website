@@ -17,7 +17,6 @@ import Layout from '../layouts/Layout.astro';
 	const lastUpdated = document.querySelector('span[x-last-updated]');
 
 	if (ps && xb && lastUpdated) {
-		console.log(crewStats);
 		ps.textContent = crewStats.ps;
 		xb.textContent = crewStats.xb;
 		lastUpdated.textContent = DateTime.fromJSDate(new Date(crewStats.lastUpdate)).toRelative();

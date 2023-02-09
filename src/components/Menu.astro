@@ -6,11 +6,6 @@ export interface Props {
 	pages: MarkdownInstance<Record<string, any>>[];
 }
 
-console.log(
-	Astro.url.pathname,
-	Astro.props.pages.map(({ url }) => url)
-);
-
 const pages = [
 	{ active: Astro.url.pathname === '/', url: '/', title: 'Home' },
 	...Astro.props.pages
@@ -21,7 +16,6 @@ const pages = [
 			title: page.frontmatter.title,
 		})),
 ];
-console.log(pages);
 ---
 
 <style>
