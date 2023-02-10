@@ -4,8 +4,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <script>
-	import { DateTime, Duration } from 'luxon';
-
+	import { DateTime } from 'luxon';
 	const crewStats = await fetch('/crew-stats.json')
 		.then((res) => res.json())
 		.catch((error) => {
@@ -17,9 +16,9 @@ import Layout from '../layouts/Layout.astro';
 	const lastUpdated = document.querySelector('span[x-last-updated]');
 
 	if (ps && xb && lastUpdated) {
-		ps.textContent = crewStats.ps;
-		xb.textContent = crewStats.xb;
-		lastUpdated.textContent = DateTime.fromJSDate(new Date(crewStats.lastUpdate)).toRelative();
+		ps.textContent = crewStats.PlayStation;
+		xb.textContent = crewStats.Xbox;
+		lastUpdated.textContent = DateTime.fromJSDate(new Date(crewStats.lastUpdated)).toRelative();
 	}
 </script>
 
