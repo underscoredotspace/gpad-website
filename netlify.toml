@@ -4,3 +4,6 @@
 [context.deploy-preview.environment]
   APP_ENV = "development"
   
+[[edge_functions]]
+  path = "/crew-stats.json"
+  function = "crew-stats"
