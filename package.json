@@ -21,7 +21,6 @@
     "@fortawesome/free-brands-svg-icons": "6",
     "@fortawesome/free-solid-svg-icons": "6",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "@radix-ui/react-icons": "^1.1.1",
     "@sentry/browser": "latest",
     "@sentry/tracing": "latest",
     "astro": "^2.0.6",
@@ -37,6 +36,7 @@
     "cssnano": "^5.1.12"
   },
   "devDependencies": {
-    "@types/luxon": "^3.2.0"
+    "@types/luxon": "^3.2.0",
+    "@types/node": "^18.13.0"
   }
 }
