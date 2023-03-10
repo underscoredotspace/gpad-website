@@ -5,7 +5,10 @@ import image from '@astrojs/image';
 
 // https://astro.build/config
 export default defineConfig({
-	server: { port: 1234 },
+	server: {
+		port: 1234,
+		host: '0.0.0.0',
+	},
 	integrations: [
 		tailwind({
 			config: {
@@ -29,7 +32,7 @@ export default defineConfig({
 			},
 		},
 		ssr: {
-			noExternal: ['@radix-ui/react-icons', '@fortawesome/react-fontawesome'],
+			noExternal: ['@fortawesome/react-fontawesome', 'luxon'],
 		},
 	},
 });
