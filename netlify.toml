@@ -3,9 +3,3 @@
 
 [context.deploy-preview.environment]
   APP_ENV = "development"
-  
-[[redirects]]
-  from = "/api"
-  to = "https://v2.gpadcrew.com"
-  status = 200
-  force = true
