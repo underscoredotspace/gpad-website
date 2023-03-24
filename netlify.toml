@@ -3,3 +3,6 @@
 
 [context.deploy-preview.environment]
   APP_ENV = "development"
+
+[context.environment]
+  APP_ENV = "production"
