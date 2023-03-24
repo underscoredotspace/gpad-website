@@ -5,7 +5,10 @@ import image from '@astrojs/image';
 
 // https://astro.build/config
 export default defineConfig({
-	server: { port: 1234 },
+	server: {
+		port: 1234,
+		host: '0.0.0.0',
+	},
 	integrations: [
 		tailwind({
 			config: {
@@ -19,7 +22,7 @@ export default defineConfig({
 	vite: {
 		define: {
 			'import.meta.env.APP_VERSION': JSON.stringify(process.env.npm_package_version),
-			'import.meta.env.APP_ENV': JSON.stringify(process.env.NODE_ENV),
+			'import.meta.env.APP_ENV': JSON.stringify(process.env.APP_ENV ?? 'development'),
 		},
 		build: {
 			rollupOptions: {
@@ -29,7 +32,7 @@ export default defineConfig({
 			},
 		},
 		ssr: {
-			noExternal: ['@radix-ui/react-icons', '@fortawesome/react-fontawesome'],
+			noExternal: ['@fortawesome/react-fontawesome', 'luxon'],
 		},
 	},
 });
