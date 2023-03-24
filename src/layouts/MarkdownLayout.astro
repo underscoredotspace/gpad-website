@@ -6,6 +6,6 @@ import Layout from './Layout.astro';
 export type Props = MarkdownLayoutProps<LayoutProps>;
 ---
 
-<Layout title={Astro.props.frontmatter.title} pages={Astro.props.frontmatter.pages}>
+<Layout title={Astro.props.frontmatter.title}>
 	<slot />
 </Layout>

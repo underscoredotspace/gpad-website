@@ -1,6 +1,7 @@
 ---
 layout: '../layouts/MarkdownLayout.astro'
 title: 'Embeds with Carl'
+hidden: true
 ---
 
 ### Creating an embed with links from scratch

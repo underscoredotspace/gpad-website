@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes, HTMLTag } from 'astro/types';
+
+export type Props = Pick<HTMLAttributes<HTMLTag>, 'class' | 'class:list'>;
+---
+
+<div
+	class={[
+		'border border-zinc-500/25 drop-shadow-lg rounded-lg p-4 dark:bg-zinc-800 bg-zinc-300 space-y-2',
+		Astro.props.class,
+	].join(' ')}
+	class:list={Astro.props['class:list']}
+>
+	<slot />
+</div>
