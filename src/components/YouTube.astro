@@ -1,0 +1,16 @@
+---
+import type { AstroComponentMetadata } from 'astro';
+import type { PartialAstroProps } from './types';
+
+export interface YouTubeProps extends PartialAstroProps {
+	videoId: string;
+	title: string;
+}
+---
+
+<iframe
+	title={Astro.props.title}
+	class={[Astro.props.class, 'w-full aspect-video border-0'].join(' ')}
+	class:list={Astro.props['class-list']}
+	src={`https://www.youtube-nocookie.com/embed/${Astro.props.videoId}?iv_load_policy=3&fs=0&disablekb=1`}
+	allowfullscreen="false"></iframe>
