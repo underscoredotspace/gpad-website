@@ -10,6 +10,7 @@ export interface Props {
 const pages = [
 	{ active: Astro.url.pathname === '/', url: '/', title: 'Home' },
 	...Astro.props.pages
+		.filter((page) => !page.frontmatter.hidden)
 		.filter(({ url }) => url && url.length > 0)
 		.map((page) => ({
 			active: Astro.url.pathname === page.url,
