@@ -19,9 +19,22 @@ const pages = [
 ];
 ---
 
+<script>
+	const label = document.querySelector<HTMLLabelElement>('#menu-open-label')!;
+	const checkbox = document.querySelector<HTMLInputElement>('#menu-open')!;
+
+	checkbox.addEventListener('change', () => {
+		label.setAttribute('aria-checked', checkbox.checked.toString());
+	});
+</script>
+
 <style>
 	#menu-open:not(:checked) ~ menu {
 		@apply opacity-0 transform translate-x-full;
+	}
+
+	#menu-open:not(:checked) ~ menu > * {
+		@apply hidden;
 	}
 
 	#menu-open:checked ~ label > #hamburger {
@@ -33,9 +46,17 @@ const pages = [
 	}
 </style>
 
-<input type="checkbox" name="menu-open" id="menu-open" class="sr-only" />
+<input
+	type="checkbox"
+	name="menu-open"
+	id="menu-open"
+	class="sr-only"
+	aria-labelledby="menu-open-label"
+	role="switch"
+	aria-checked="false"
+/>
 
-<label for="menu-open">
+<label id="menu-open-label" for="menu-open" aria-label="Site Menu">
 	<FontAwesomeIcon icon={faBars} id="hamburger" className="w-8 h-8" />
 	<FontAwesomeIcon icon={faTimes} id="cross" className="w-8 h-8" />
 </label>

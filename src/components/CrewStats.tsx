@@ -29,10 +29,10 @@ export const CrewStats = () => {
 		<>
 			<h4 className="mb-4 mt-0 text-center font-normal">Our Members</h4>
 			<dl class="grid grid-cols-2 place-items-center text-2xl font-bold font-mono">
-				<div class="flex flex-row gap-2 items-center">
+				<div class="flex flex-row gap-2 items-center text-blue-600 dark:text-blue-200">
 					<dt>
 						<svg
-							class="text-blue-200 h-6 w-6"
+							class=" h-6 w-6"
 							aria-label="PlayStation"
 							role="img"
 							xmlns="http://www.w3.org/2000/svg"
@@ -44,14 +44,14 @@ export const CrewStats = () => {
 							></path>
 						</svg>
 					</dt>
-					<dd class="text-blue-200">{crewStats?.PlayStation ?? '...'}</dd>
+					<dd>{crewStats?.PlayStation ?? '...'}</dd>
 				</div>
 
-				<div class="flex flex-row gap-2 items-center">
+				<div class="flex flex-row gap-2 items-center text-green-600 dark:text-green-200">
 					<dt>
 						<svg
 							aria-label="Xbox"
-							class="text-green-200 h-6 w-6"
+							class="h-6 w-6"
 							role="img"
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 576 512"
@@ -62,7 +62,7 @@ export const CrewStats = () => {
 							></path>
 						</svg>
 					</dt>
-					<dd class="text-green-200">{crewStats?.Xbox ?? '...'}</dd>
+					<dd>{crewStats?.Xbox ?? '...'}</dd>
 				</div>
 			</dl>
 			<div class="text-gray-500 text-xs text-right mt-4">
