@@ -10,17 +10,24 @@ interface MemberCount {
 
 export const CrewStats = () => {
 	const [crewStats, setCrewStats] = useState<MemberCount>();
+	const [error, setError] = useState(false);
 
 	useEffect(() => {
 		apiFetch<MemberCount>('/member/count')
 			.then(setCrewStats)
 			.catch((error) => {
-				console.error(`Something went wrong: ${error}`);
+				setError(true);
+				import.meta.env.DEV && console.error(`Something went wrong: ${error}`);
 			});
 	}, []);
 
+	if (error) {
+		return <div className="text-center">Error getting crew stats 😔</div>;
+	}
+
 	return (
 		<>
+			<h4 className="mb-4 mt-0 text-center font-normal">Our Members</h4>
 			<dl class="grid grid-cols-2 place-items-center text-2xl font-bold font-mono">
 				<div class="flex flex-row gap-2 items-center">
 					<dt>
@@ -58,7 +65,7 @@ export const CrewStats = () => {
 					<dd class="text-green-200">{crewStats?.Xbox ?? '...'}</dd>
 				</div>
 			</dl>
-			<div>
+			<div class="text-gray-500 text-xs text-right mt-4">
 				Last updated:{' '}
 				<span>
 					{(crewStats && DateTime.fromJSDate(new Date(crewStats.lastUpdated)).toRelative()) ??
