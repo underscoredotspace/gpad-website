@@ -52,7 +52,8 @@
 	}
 
 	p video,
-	p img {
+	p img,
+	main img {
 		@apply w-full mt-4;
 	}
 
