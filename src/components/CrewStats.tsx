@@ -65,7 +65,7 @@ export const CrewStats = () => {
 					<dd>{crewStats?.Xbox ?? '...'}</dd>
 				</div>
 			</dl>
-			<div class="text-gray-500 text-xs text-right mt-4">
+			<div class="dark:text-gray-400 text-gray-600 text-xs text-right mt-4">
 				Last updated:{' '}
 				<span>
 					{(crewStats && DateTime.fromJSDate(new Date(crewStats.lastUpdated)).toRelative()) ??
