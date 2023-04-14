@@ -4,29 +4,28 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+const description =
+	'GPAD is an active and supportive PlayStation & Xbox Grand Theft Auto Online crew and gaming community';
 ---
-
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#0f2499" />
-<meta
-	name="description"
-	content="GPAD is an active and supportive PlayStation & Xbox Grand Theft Auto Online crew and gaming community"
-/>
+<meta name="description" content={description} />
+<meta name="google" content="nositelinkssearchbox">
+
 <meta property="og:url" content="https://gpadcrew.com" />
-<meta
-	property="og:description"
-	content="An active and supportive PlayStation and Xbox Grand Theft Auto Online crew and gaming community"
-/>
+<meta property="og:description" content={description} />
 <meta property="og:title" content={`Gettin' Payd All Day (GPAD) - ${title}`} />
 <meta name="og:image" content="https://i.gpadcrew.com/social-card.jpg" />
+
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image:alt" content="GPAD GTA Crew" />
+
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 <link rel="manifest" href="/site.webmanifest" />
-<meta charset="UTF-8" />
 <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>

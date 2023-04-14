@@ -13,7 +13,10 @@ const { title, pages } = Astro.props;
 
 <header class="fixed w-full bg-zinc-800/70 text-zinc-300 backdrop-blur z-30 drop-shadow-lg">
 	<div class="h-16 max-w-screen-lg flex flex-row justify-between items-center px-2 mx-auto">
-		<Image src="/logo.webp" format="webp" width={40} height={40} alt="GPAD Crew logo" />
+		<a href="/">
+			<div class="sr-only">GPAD - back to home</div>
+			<Image src="/logo.webp" format="webp" width={40} height={40} aria-hidden="true" alt="" />
+		</a>
 		<h1>{title}</h1>
 		<Menu pages={pages} />
 	</div>

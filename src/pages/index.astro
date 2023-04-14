@@ -2,7 +2,6 @@
 import Card from '../components/Card.astro';
 import { CrewStats } from '../components/CrewStats';
 import DiscordInvite from '../components/DiscordInvite.astro';
-import YouTube from '../components/YouTube.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -18,8 +17,12 @@ import Layout from '../layouts/Layout.astro';
 		Minecraft, Call of Duty and Forza.
 	</p>
 
-	<!-- <YouTube videoId="ulKZbFzPZyw" title="Welcome to GPAD" class="my-4" /> -->
-	<img src="/post-op.webp" loading="lazy" alt="How we do things at GPAD" class="my-4" />
+	<img
+		src="/post-op.webp"
+		loading="lazy"
+		alt="a Post Op being pushed by a Vigilante during a MC sale in GTA"
+		class="my-4"
+	/>
 
 	<Card class="max-w-xl mx-auto">
 		<CrewStats client:only="preact" />
@@ -49,6 +52,6 @@ import Layout from '../layouts/Layout.astro';
 				></path></svg
 			>
 		</DiscordInvite>{' '}
-		and our Admissions team will help you join.
+		and our Admissions Team will help you get started.
 	</p>
 </Layout>
