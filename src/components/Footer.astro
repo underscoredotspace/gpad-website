@@ -7,6 +7,7 @@ import {
 	faRedditAlien,
 	faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
+import DiscordInvite from './DiscordInvite.astro';
 ---
 
 <footer class="bg-zinc-300/60 dark:bg-zinc-800/60">
@@ -31,18 +32,28 @@ import {
 	>
 		<div class="min-w-fit shrink-0 flex flex-1 flex-col items-center justify-center gap-4">
 			<Image src="/logo.webp" format="webp" alt="GPAD Logo" width={96} height={96} />
-			<span>Gettin' Payd since 2019</span>
-			<a href={`https://discord.gg/${import.meta.env.PUBLIC_DISCORD_INVITE}`}>Join GPAD</a>
-			<span class="text-xs text-gray-600 mt-4">
+			<span title="Yes, Payd. Ask Shawn about this I'm just the website, I didn't choose the name. "
+				>Gettin' Payd since 2019</span
+			>
+			<DiscordInvite>Join GPAD</DiscordInvite>
+			<span class="text-xs mt-4">
 				{`${import.meta.env.APP_VERSION}-${import.meta.env.APP_ENV}`}
 			</span>
 		</div>
 
 		<div class="min-w-fit flex-1 h-full shrink-0 flex flex-col justify-evenly items-center gap-4">
-			<FooterSocialLink icon={faRedditAlien} href="/">Reddit</FooterSocialLink>
-			<FooterSocialLink icon={faYoutube} href="/">YouTube</FooterSocialLink>
-			<FooterSocialLink icon={faTwitter} href="/">Twitter</FooterSocialLink>
-			<FooterSocialLink icon={faInstagram} href="/">Instagram</FooterSocialLink>
+			<FooterSocialLink icon={faRedditAlien} href="https://reddit.com/r/gpad">
+				Reddit
+			</FooterSocialLink>
+			<FooterSocialLink icon={faYoutube} href="https://www.youtube.com/@gpad3670">
+				YouTube
+			</FooterSocialLink>
+			<FooterSocialLink icon={faTwitter} href="https://twitter.com/GPADCrew">
+				Twitter
+			</FooterSocialLink>
+			<FooterSocialLink icon={faInstagram} href="https://instagr.am/GPADCrew">
+				Instagram
+			</FooterSocialLink>
 		</div>
 	</div>
 </footer>

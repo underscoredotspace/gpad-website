@@ -27,7 +27,7 @@ export const CrewStats = () => {
 
 	return (
 		<>
-			<h4 className="mb-4 mt-0 text-center font-normal">Our Members</h4>
+			<h2 className="mb-4 mt-0 text-center font-normal">Our Members</h2>
 			<dl class="grid grid-cols-2 place-items-center text-2xl font-bold font-mono">
 				<div class="flex flex-row gap-2 items-center text-blue-600 dark:text-blue-200">
 					<dt>
@@ -65,7 +65,7 @@ export const CrewStats = () => {
 					<dd>{crewStats?.Xbox ?? '...'}</dd>
 				</div>
 			</dl>
-			<div class="text-gray-500 text-xs text-right mt-4">
+			<div class="dark:text-gray-400 text-gray-600 text-xs text-right mt-4">
 				Last updated:{' '}
 				<span>
 					{(crewStats && DateTime.fromJSDate(new Date(crewStats.lastUpdated)).toRelative()) ??
