@@ -1,19 +1,14 @@
 import { DateTime } from 'luxon';
 import { useEffect, useState } from 'preact/hooks';
-import { apiFetch } from '../lib/api';
-
-interface MemberCount {
-	PlayStation: number;
-	Xbox: number;
-	lastUpdated: Date;
-}
+import { getMembercount } from '../lib/api';
+import type { MemberCounts } from '../lib/types';
 
 export const CrewStats = () => {
-	const [crewStats, setCrewStats] = useState<MemberCount>();
+	const [crewStats, setCrewStats] = useState<MemberCounts>();
 	const [error, setError] = useState(false);
 
 	useEffect(() => {
-		apiFetch<MemberCount>('/member/count')
+		getMembercount()
 			.then(setCrewStats)
 			.catch((error) => {
 				setError(true);
@@ -67,9 +62,8 @@ export const CrewStats = () => {
 			</dl>
 			<div class="dark:text-gray-400 text-gray-600 text-xs text-right mt-4">
 				Last updated:{' '}
-				<span>
-					{(crewStats && DateTime.fromJSDate(new Date(crewStats.lastUpdated)).toRelative()) ??
-						'...'}
+				<span title={crewStats?.lastUpdated.toUTC().toString()}>
+					{crewStats?.lastUpdated.toRelative() ?? '.. hours ago'}
 				</span>
 			</div>
 		</>
